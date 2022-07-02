@@ -12,7 +12,7 @@
 let
 
   inherit (pkgs) makeWrapper;
-  inherit (pkgs.stdenv.lib) fix' extends inNixShell;
+  inherit (pkgs.lib) fix' extends inNixShell;
 
   pythonPackages = pkgs.lib.makeScope pkgs.newScope (
     import "${toString pkgs.path}/pkgs/top-level/python-packages.nix" {
@@ -86,7 +86,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://palletsprojects.com/p/click/";
         license = licenses.bsdOriginal;
         description = "Composable command line interface toolkit";
@@ -102,7 +102,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://htmlmin.readthedocs.io/en/latest/";
         license = licenses.bsdOriginal;
         description = "An HTML Minifier";
@@ -120,7 +120,7 @@ let
       propagatedBuildInputs = [
         self."markupsafe"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://palletsprojects.com/p/jinja/";
         license = licenses.bsdOriginal;
         description = "A very fast and expressive template engine.";
@@ -136,7 +136,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/tikitu/jsmin/";
         license = licenses.mit;
         description = "JavaScript minifier.";
@@ -155,7 +155,7 @@ let
         self."six"
         self."tornado"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/lepture/python-livereload";
         license = licenses.bsdOriginal;
         description = "Python LiveReload is an awesome tool for web developers";
@@ -173,7 +173,7 @@ let
       propagatedBuildInputs = [
         self."setuptools"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://Python-Markdown.github.io/";
         license = licenses.bsdOriginal;
         description = "Python implementation of Markdown.";
@@ -189,7 +189,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://palletsprojects.com/p/markupsafe/";
         license = licenses.bsdOriginal;
         description = "Safely add untrusted strings to HTML/XML markup.";
@@ -212,7 +212,7 @@ let
         self."pyyaml"
         self."tornado"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://www.mkdocs.org";
         license = licenses.bsdOriginal;
         description = "Project documentation with Markdown.";
@@ -234,7 +234,7 @@ let
         self."pygments"
         self."pymdown-extensions"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://squidfunk.github.io/mkdocs-material/";
         license = licenses.mit;
         description = "A Material Design theme for MkDocs";
@@ -254,7 +254,7 @@ let
         self."jsmin"
         self."mkdocs"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/byrnereese/mkdocs-minify-plugin";
         license = licenses.mit;
         description = "An MkDocs plugin to minify HTML and/or JS files prior to being written to disk";
@@ -270,7 +270,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/facelessuser/pep562";
         license = licenses.mit;
         description = "Backport of PEP 562.";
@@ -286,7 +286,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "http://pygments.org/";
         license = licenses.bsdOriginal;
         description = "Pygments is a syntax highlighting package written in Python.";
@@ -305,7 +305,7 @@ let
         self."markdown"
         self."pep562"
       ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/facelessuser/pymdown-extensions";
         license = licenses.mit;
         description = "Extension pack for Python Markdown.";
@@ -321,7 +321,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/yaml/pyyaml";
         license = licenses.mit;
         description = "YAML parser and emitter for Python";
@@ -337,7 +337,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/pypa/setuptools";
         license = licenses.mit;
         description = "Easily download, build, install, upgrade, and uninstall Python packages";
@@ -353,7 +353,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "https://github.com/benjaminp/six";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
@@ -369,7 +369,7 @@ let
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
+      meta = with pkgs.lib; {
         homepage = "http://www.tornadoweb.org/";
         license = licenses.asl20;
         description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.";

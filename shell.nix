@@ -1,4 +1,4 @@
-{ pkgs ? import ./nixpkgs.nix, compiler ? "ghc883", doBenchmark ? true, doCheck ? true }:
+{ pkgs ? import ./nixpkgs.nix, compiler ? "ghc923", doBenchmark ? true, doCheck ? true }:
 let
   fontsConf = pkgs.makeFontsConf {
     fontDirectories = [ pkgs.cantarell-fonts ];
@@ -14,8 +14,8 @@ in
       project.examples
     ];
     buildInputs = [
-      project.docs.packages.mkdocs
-      project.docs.packages.mkdocs-material
+      #project.docs.packages.mkdocs
+      #project.docs.packages.mkdocs-material
       pkgs.cabal-install
     ];
     FONTCONFIG_FILE = fontsConf;
